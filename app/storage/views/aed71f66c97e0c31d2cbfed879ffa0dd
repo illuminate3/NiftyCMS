@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">     
+        <meta content="<?php echo $page->summary; ?>" name="description">
+        <meta content="James Ilaki" name="author">
+        <link href="<?php echo asset('favicon.png'); ?>" rel="shortcut icon">
+        <title>Nifty - <?php echo $__env->yieldContent('page-title'); ?> </title>
+        <?php echo HTML::style('assets/bootstrap/css/bootstrap.css'); ?>  
+        <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+        <?php echo HTML::style('assets/css/global.css'); ?>
+        <?php echo $__env->yieldContent('page-css'); ?>
+        <!--[if lt IE 9]>
+            <?php echo HTML::script('assets/bootstrap/js/html5shiv.js'); ?>
+            <?php echo HTML::script('assets/bootstrap/js/respond.min.js'); ?>
+        <![endif]-->
+    </head>
+    <body class="page page-home page-id-<?php echo $page->id; ?> slug-<?php echo $page->slug; ?>">
+        <div class="container">
+            <?php echo $__env->make('frontends.partials.top', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>       
+            <div class="row content">
+                <?php echo $__env->yieldContent('page-content'); ?>
+            </div>
+        </div>
+        <?php echo $__env->make('frontends.partials.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+        <?php echo HTML::script('assets/js/jQuery-1.10.2.min.js'); ?>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <?php echo HTML::script('assets/js/responsive-menu.js'); ?>   
+        <?php echo $__env->yieldContent('page-js'); ?>     
+    </body>
+</html>

@@ -1,0 +1,24 @@
+
+<?php $__env->startSection('page-title'); ?>
+    <?php echo $page->title; ?>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('page-css'); ?>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('page-content'); ?>
+    <div class="col-md-3 hidden-sm hidden-xs">
+        <?php echo $__env->make('frontends.partials.sidebar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    </div>
+    <div class="col-md-9 col-sm-12">
+        <div class="editor-content"> 
+            <?php echo $page->content; ?>
+        </div>
+    </div>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('page-js'); ?>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('frontends._template', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

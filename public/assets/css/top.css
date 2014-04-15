@@ -1,0 +1,115 @@
+
+.float-right {
+    float: right;
+}
+
+.niftyNav .secondary-nav {
+    display: none;
+}
+
+ul.niftyNavUl {
+    list-style: none;
+    display: block;
+    overflow: hidden;
+
+}
+
+ul.niftyNavUl li {
+    letter-spacing: -0.2px;
+}
+
+ul.niftyNavUl > li > a {
+    font-weight: 700;
+}
+
+ul.niftyNavUl > li > a:hover {
+    text-decoration: none;
+}
+
+ul.niftyNavUl > li.active > a {
+    color: #FF0000 !important;
+    background: none !important;
+}
+
+.input-group-addon {
+    border-radius: 0 4px 4px 0 !important;
+    border-left: none;
+}
+
+
+@media( max-width: 991px ) {
+
+    .container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    ul.niftyNavUl {
+        width: 100%;
+        margin: 0;
+    }
+
+    ul.niftyNavUl li {
+        float: none;
+        padding: 0;
+        margin-left: 0;
+    }
+
+    ul.niftyNavUl li a {
+        display: block;
+    }
+
+    ul.niftyNavUl > li {
+        border-bottom: 2px solid #EEE;
+    }
+
+    ul.niftyNavUl > li > a {
+        padding: 10px 5px;  
+    }
+ 
+    .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+        background-color: inherit;
+        color: inherit;
+    } 
+
+    ul.secondary-nav {
+        margin-left: 15px;
+        padding-left: 0;
+        list-style: none outside none;
+    }
+
+    ul.secondary-nav a {
+        padding: 5px;
+        color: inherit;
+    } 
+
+    ul.secondary-nav a:hover {
+        background: #EEE;
+        text-decoration: none;
+    }     
+    
+    .navbar-form {
+        border-bottom: none;
+        padding-bottom: 3px;
+    }
+
+    @media( min-width: 450px ) {
+        .navbar-form .input-group {
+            max-width: 50%;
+        }
+    }
+
+}
+
+
+@media( min-width: 992px ) {
+    
+    .float-right {
+        display: none;
+    }
+
+    .navbar-form .input-group {
+        max-width: 200px;
+    }
+
+}

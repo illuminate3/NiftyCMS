@@ -1,0 +1,48 @@
+
+<?php $__env->startSection('page-title'); ?>
+    <?php echo $page->title; ?>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('page-css'); ?>
+	<style>
+		.meta { margin: 10px 0; }
+		.widget { margin-bottom: 20px; }
+		ul { list-style: none; padding-left: 2px; }
+	</style>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('page-content'); ?>
+    <div class="col-sm-12">
+        <div class="editor-content row blog">
+        	<div class="col-sm-8"> 
+				<div class="posts">
+					<div class="entry">
+						<h2><?php echo $page->title; ?></h2>
+
+                        <div class="meta">
+                        	<i class="fa fa-calendar"></i> <?php echo \Jamesy\FormatDate::getStandardFormat( $page->created_at ); ?> 
+                        	<i class="fa fa-user"></i> <?php echo $page->user->first_name; ?> 
+                        	<i class="fa fa-folder-open"></i> <a href="#">General</a> 
+                        	<span class="pull-right"><i class="fa fa-comment"></i> <a href="#">0 Comments</a></span>
+                        </div>	
+
+                        <div class="bthumb">
+                           	<a href="<?php echo URL::to('blog/' . $page->slug); ?>">
+                           		<img class="img-responsive" alt="<?php echo $page->title; ?>" src="<?php echo asset(Setting::getImagePath() . '/'. $page->featured_image); ?>">
+                           	</a>
+                        </div>
+						<?php echo $page->content; ?>
+					</div>
+				</div>        	
+            </div>
+			<div class="col-sm-4">
+				<?php echo $__env->make('frontends.partials.blog-sidebar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+			</div>
+        </div>
+    </div>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('page-js'); ?>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('frontends._template', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
